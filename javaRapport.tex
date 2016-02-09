@@ -1,0 +1,104 @@
+\documentclass[12pt]{article}
+
+%Importationd e toutes les balises nécessaires
+\usepackage[francais]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{moreverb}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{xcolor}
+
+%Creationd es couleurs
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+%Definition du code couleur des langages
+\lstset{breaklines=true, commentstyle=\color{dkgreen}, stringstyle=\color{mauve} , tabsize=3}
+
+\lstdefinestyle{Bash}
+{language=bash,
+keywordstyle=\color{blue},
+basicstyle=\ttfamily,
+morekeywords={peter@kbpet},
+alsoletter={:~$},
+morekeywords=[2]{peter@kbpet:},
+keywordstyle=[2]{\color{red}},
+literate={\$}{{\textcolor{red}{\$}}}1 
+         {:}{{\textcolor{red}{:}}}1
+         {~}{{\textcolor{red}{\textasciitilde}}}1,
+}
+%Fin initialisation du document
+
+
+\begin{document}
+
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 
+
+\center 
+
+
+\textsc{\LARGE Université de Caen Basse-Normandie}\\[1.5cm]  %Nom de l'université
+\textsc{\Large Master DNR2I}\\[0.5cm]  %Nom de la formation
+\textsc{\large JAVA}\\[0.5cm] %Nom de la matière
+
+
+\HRule \\[0.4cm]
+{ \huge \bfseries Devoir Maison}\\[0.4cm] %Type du devoir
+\HRule \\[1.5cm]
+ 
+
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Auteur:}\\
+Antoine \textsc{LEBEL} %1uteur
+Clement \textsc{LE BIEZ} %1uteur
+Guillaume \textsc{BROSSE} %1uteur
+Nicolas \textsc{BELLEME} %1uteur
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Enseignant:} \\
+M Y. \textsc{MATHET}  %Enseignant
+\end{flushright}
+\end{minipage}\\[3cm]
+
+\includegraphics[width=4cm,height=4cm,keepaspectratio]{res/fac.png}\\[0cm] % Include a department/university logo - this will require the graphicx package
+
+{\large \today}\\[3cm] 
+
+
+\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+
+
+
+\tableofcontents % Afficher table des matières
+\newpage
+
+\part{Question 1}
+\section{Intitulé : } Télécharger le fichier des prénoms.
+\section{Réponse : }  Fait.
+
+\newpage
+
+\begin{lstlisting}[style=Bash] %Pour mettre du code
+
+generateRandomNumber(){
+    number="0";
+    for i in {0..8}; do
+        r=$((RANDOM%10+0));
+        number="$number""$r";
+    done
+    echo $number;
+}
+
+\end{lstlisting}
+\end{document}
